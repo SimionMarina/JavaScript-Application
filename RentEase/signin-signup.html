@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <script src="https://kit.fontawesome.com/74796a686f.js" crossorigin="anonymous"></script>
+  <script src="./script/signin-signup.js" defer></script>
+  <script src="./script/form-validation.js" defer></script>
+  <link rel="stylesheet" href="./style/signin-signup.css">
+
+  <title>Welcome</title>
+</head>
+<body>
+    <div class="container" id="container">
+        <div class="signin-signup"> 
+            <!-- Login form -->
+            <form id="login_form" class="sign-in-form">
+                <h2 class="title">Sign in</h2>
+
+                <!-- Email field -->
+                <div class="input-field">
+                  <i class="fa-solid fa-envelope"></i>
+                  <input id="login_email" type="email" placeholder="Email">
+                </div>
+                <div id="login_email_error" class="error"></div>
+                
+                <!-- Password field -->
+                <div class="input-field">
+                  <i class="fa-solid fa-lock"></i>
+                  <input id="login_password" type="password" placeholder="Password">
+                </div>
+                <div id="login_password_error" class="error"></div>
+              
+                <!-- Submit login form button -->
+                <button type="submit" class="btn">Login</button>
+
+                <!-- Right panel content -->
+                <p class="account-text">Don't have an account? <a href="#" id="sign-up-btn2">Register now</a></p>
+            </form>
+            <form id="register_form" class="sign-up-form">
+                <h2 class="title">Sign up</h2>
+
+                <div class="fullname-field">
+                  <!-- First Name field -->
+                  <div class="input-field first-name-field">
+                    <i class="fa-solid fa-user"></i>
+                    <input id="first_name_input" type="text" placeholder="First Name" required>
+                  </div>
+                  <div id="first_name_error" class="error"></div>
+                  <!-- Last Name field -->
+                  <div class="input-field last-name-field">
+                    <i class="fa-solid fa-user"></i>
+                    <input id="last_name_input" type="text" placeholder="Last name" required>
+                  </div>
+                  <div id="last_name_error" class="error"></div>
+
+                </div>
+
+                <!-- Email field -->
+                <div class="input-field">
+                  <i class="fa-solid fa-envelope"></i>
+                  <input id="email_input" type="email" placeholder="Email" required>
+                </div>
+                <div id="email_error" class="error"></div>
+
+                <!-- Password field -->
+                <div class="input-field">
+                  <i class="fa-solid fa-lock"></i>
+                  <input id="password_input" type="password" placeholder="Password" required>
+                </div>
+                <div id="password_error" class="error"></div>
+
+                <!-- Confirm password field -->
+                <div class="input-field">
+                  <i class="fa-solid fa-lock"></i>
+                  <input id="cpassword_input" type="password" placeholder="Confirm Password" required>
+                </div>
+                <div id="cpassword_error" class="error"></div>
+
+                <!-- Birth Date field -->
+                <p class="birth-date">Birth Date</p>
+                <div class="input-field">
+                  <i class="fa-solid fa-calendar-days"></i>
+                  <input id="birth_date_input" type="date" placeholder="Birth Date" required>
+                </div>
+                <div id="birth_date_error" class="error"></div>
+                
+                <!-- Submit register form button -->
+                <button type="submit" class="btn">Register</button>
+
+                <!-- Right panel content -->
+                <p class="account-text">Already have an account? <a href="#" id="sign-in-btn2">Sign in</a></p>
+            </form>
+        </div>
+        <div class="panels-container">
+
+            <!-- Left panel container-->
+            <div class="panel left-panel">
+                <div class="content">
+                    <h3>Do you already have an account?</h3>
+                    <button class="btn" id="sign-in-btn">Sign in</button>
+                </div>
+            </div>
+
+            <!-- Right panel container-->
+            <div class="panel right-panel">
+                <div class="content">
+                    <h3>Don't have an account yet?</h3>
+                    <button class="btn" id="sign-up-btn">Register now</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- boxicons -->
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+  <!-- Google fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sedan:ital@0;1&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="./style/header.css">
+  <link rel="stylesheet" href="./style/home.css">
+  <script src="./script/header.js" defer></script>
+  <script src="./script/home.js" defer></script>
+  
+  <title>Home</title>
+</head>
+<body>
+  <div class="sidebar">
+    <div class="top">
+      <div class="logo">
+        <img src="images/background.png" alt="logo">
+      </div>
+      <i class="bx bx-menu" id="burger_menu"></i>
+    </div>
+    <ul>
+      <li>
+        <a href="home.html">
+          <i class='bx bxs-grid-alt'></i>
+          <span class="nav-item">View flats</span>
+        </a>
+      </li>
+      <li>
+        <a href="favorites.html">
+          <i class='bx bxs-heart'></i>
+          <span class="nav-item">Favorites</span>
+        </a>
+      </li>
+      <li>
+        <a href="profile.html">
+          <i class='bx bx-user'></i>
+          <span class="nav-item">My profile</span>
+        </a>
+      </li>
+      <li>
+        <a href="#" id="logout_btn">
+          <i class='bx bx-log-out'></i>
+          <span class="nav-item">Logout</span>
+        </a>
+      </li>
+    </ul>
+    <div class="user">
+      <p class="user-message" id="user_message"></p>
+    </div>
+  </div>
+  <div class="main-content" id="main_content">
+    <div class="container">
+      <div class="wrapper" id="add_flat_form">
+        <button id="close_form">X</button>
+        <div class="form">
+          <div class="left">
+            <div class="inputfield">
+              <label for="city">City</label>
+              <input id="city_input" type="text" name="city" class="input" required>
+            </div>  
+            <div class="inputfield">
+              <label for="street">Street name</label>
+              <input id="street_name_input" type="text" name="street" class="input" required>
+            </div>  
+            <div class="inputfield">
+              <label for="number">Street number</label>
+              <input id="street_number_input" type="email" name="number" class="input" required>
+            </div>
+            <div class="inputfield">
+              <label>Has AC</label>
+              <div class="custom_select">
+                <select id="ac_input">
+                  <option value="">Select</option>
+                  <option value="yes">Yes</option>
+                  <option value="no">No</option>
+                </select>
+              </div>
+            </div> 
+          </div>
+          <div class="right">
+            <div class="inputfield">
+              <label for="area">Area size</label>
+              <input id="area_size_input" type="text" name="area" class="input" required>
+            </div> 
+            <div class="inputfield">
+              <label for="year">Year built</label>
+              <input id="year_build_input" type="text" name="yeay" class="input" required>
+            </div> 
+            <div class="inputfield">
+              <label for="price">Rent price</label>
+              <input id="rent_price_input" type="text" name="price" class="input" required>
+            </div> 
+            <div class="inputfield">
+              <label for="date">Date available</label>
+              <input id="available_date_input" type="date" name="date" class="input" required>
+            </div>
+          </div>
+          <div class="inputfield bottom">
+            <button id="add_flat_btn" type="submit" value="ADD FLAT" class="btn">Add flat</button>
+          </div>
+        </div>
+      </div>
+      <div class="filters-container">
+        <form id="filter_form" class="filter-form">
+          <label for="filter" class="filter-form-label">Choose a filter:</label>
+          <select name="filter" id="filters" class="filter-form-select">
+            <option value="city">City</option>
+            <option value="rentPrice">Price</option>
+            <option value="areaSize">Area size</option>
+          </select>
+          <input id="filter_form_input" class="filter-form-input" type="text">
+          <input class="filter-form-button" type="submit" value="Show">
+        </form>
+        
+      </div>
+      <div class="table-container">
+        <h1 class="title">My Apartments</h1>
+        <div class="table-buttons">
+          <div>
+            <button class="add-flat-btn" id="show_add_flat_form">Add flat</button>
+            <button class="view-flats-btn" id="view_flats_btn">View flats</button>
+          </div>
+          <div>
+            <form id="sort_form" class="sort-form">
+              <label for="sort" class="sort-form-label">Sort flats by:</label>
+              <select name="sort" id="sort" class="sort-form-select">
+                <option value="city">City</option>
+                <option value="rentPrice">Price</option>
+                <option value="areaSize">Area size</option>
+              </select>
+              <input class="sort-form-button" type="submit" value="Sort">
+            </form>
+          </div>
+        </div>
+        <table id="flats_table">
+          <!-- <thead>
+            <tr>
+              <th scope="col">City</th>
+              <th scope="col">Street Name</th>
+              <th scope="col">Street Number</th>
+              <th scope="col">AC</th>
+              <th scope="col">Area Size</th>
+              <th scope="col">Year Build</th>
+              <th scope="col">Rent Price</th>
+              <th scope="col">Available Date</th>
+              <th scope="col">Add to favorite</th>
+              <th scope="col">Delete</th>
+            </tr>
+          </thead>
+          <tbody>  -->
+            <!-- <tr>
+              <td scope="row" data-label="City">Bucuresti</td>
+              <td data-label="Street Name">Crinului</td>
+              <td data-label="Street Number">26</td>
+              <td data-label="AC">Yes</td>
+              <td data-label="Area Size">34mp</td>
+              <td data-label="Year Build">2019</td>
+              <td data-label="Rent Price">300$</td>
+              <td data-label="Available Date">12/01/2024</td>
+              <td data-label="Add to favorite">Add</td>
+              <td data-label="Delete">X</td>
+            </tr>   
+          </tbody> -->
+        </table>
+      </div>
+    </div>
+  </div>
+  
+</body>
+</html>

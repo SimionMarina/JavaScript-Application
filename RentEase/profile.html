@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- boxicons -->
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+  <!-- Google fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Sedan:ital@0;1&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="./style/header.css">
+  <link rel="stylesheet" href="./style/profile.css">
+
+  <script src="https://kit.fontawesome.com/74796a686f.js" crossorigin="anonymous"></script>
+  <script src="./script/header.js" defer></script>
+  <script type="module" src="./script/profile.js" defer></script>
+  <title>Favorites</title>
+</head>
+<body>
+  <div class="sidebar">
+    <div class="top">
+      <div class="logo">
+        <img src="images/background.png" alt="logo">
+      </div>
+      <i class="bx bx-menu" id="burger_menu"></i>
+    </div>
+    <ul>
+      <li>
+        <a href="home.html">
+          <i class='bx bxs-grid-alt'></i>
+          <span class="nav-item">View flats</span>
+        </a>
+      </li>
+      <li>
+        <a href="favorites.html">
+          <i class='bx bxs-heart'></i>
+          <span class="nav-item">Favorites</span>
+        </a>
+      </li>
+      <li>
+        <a href="profile.html">
+          <i class='bx bx-user'></i>
+          <span class="nav-item">My profile</span>
+        </a>
+      </li>
+      <li>
+        <a href="#" id="logout_btn">
+          <i class='bx bx-log-out'></i>
+          <span class="nav-item">Logout</span>
+        </a>
+      </li>
+    </ul>
+    <div class="user">
+      <p class="user-message" id="user_message"></p>
+    </div>
+  </div>
+  <div class="main-content" id="main_content">
+      <div>
+        <h1 class="title">My profile</h1>
+      </div>
+      <div class="profile-container" id="profile_container">
+        <p class="profile-title">Personal data</p>
+      <div class="profile-content">
+        <div class="profile-field">
+          <label for="fname">First name:</label>
+          <input type="text" id="fname" name="fname" value="" readonly>
+        </div>
+        <div class="profile-field">
+          <label for="lname">Last name:</label>
+          <input type="text" id="lname" name="lname" value="" readonly>
+        </div>
+        <div class="profile-field">
+          <label for="email">Email:</label>
+          <input type="text" id="email" name="email" value="" readonly>
+        </div>
+        <div class="profile-field">
+          <label for="password">Password:</label>
+          <input type="password" id="password" name="password" value="" readonly>
+        </div>
+        <div class="profile-field">
+          <label for="dob">Birth date:</label>
+          <input type="text" id="dob" name="dob" value="" readonly>
+        </div>
+      </div>
+  </div>
+  <div class="action-container">
+    <button class="edit-profile" id="edit_profile">Edit</button>
+  </div>
+  <div class="edit-profile-form-container">
+    <form id="edit_profile_form" class="edit-profile-form">
+      
+      <h1 class="edit-profile-title">Edit profile form</h1>
+      <div class="fullname-field">
+
+        <div class="input-field first-name-field">
+          <i class="fa-solid fa-user"></i>
+          <input id="first_name_input" type="text" placeholder="First Name" required>
+        </div>
+        <div id="first_name_error" class="error"></div>
+
+        <div class="input-field last-name-field">
+          <i class="fa-solid fa-user"></i>
+          <input id="last_name_input" type="text" placeholder="Last name" required>
+        </div>
+        <div id="last_name_error" class="error"></div>
+
+      </div>
+
+      <div class="input-field">
+        <i class="fa-solid fa-envelope"></i>
+        <input id="email_input" type="email" placeholder="Email" required>
+      </div>
+      <div id="email_error" class="error"></div>
+
+      <div class="input-field">
+        <i class="fa-solid fa-lock"></i>
+        <input id="password_input" type="password" placeholder="Password" required>
+      </div>
+      <div id="password_error" class="error"></div>
+
+      <div class="input-field">
+        <i class="fa-solid fa-lock"></i>
+        <input id="cpassword_input" type="password" placeholder="Confirm Password" required>
+      </div>
+      <div id="cpassword_error" class="error"></div>
+
+      <p class="birth-date">Birth Date</p>
+      <div class="input-field">
+        <i class="fa-solid fa-calendar-days"></i>
+        <input id="birth_date_input" type="date" placeholder="Birth Date" required>
+      </div>
+      <div id="birth_date_error" class="error"></div>
+      
+      <button type="submit" class="btn">Save</button>
+      
+  </form>
+  </div>
+  </div>
+</body>
+</html>
